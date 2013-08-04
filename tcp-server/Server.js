@@ -11,6 +11,7 @@ Server.prototype = {
     constructor: Server,
 
     start: function () {
+        //creating server
         var connection = net.createServer(this.clientConnect.bind(this));
         connection.listen(this.port);
 
@@ -26,6 +27,7 @@ Server.prototype = {
     },
 
     stop: function () {
+        //closing client sockets
         this.clients
             .forEach(function (client) {
                 client.close();

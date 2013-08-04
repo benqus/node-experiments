@@ -48,6 +48,8 @@ Client.prototype = {
         this.session.destroy();
         this.socket.close();
         this.cache.empty();
+
+        return this;
     }
 };
 
