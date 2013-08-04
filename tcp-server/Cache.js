@@ -50,6 +50,10 @@ Cache.prototype = {
         delete branch[key];
 
         return this;
+    },
+
+    empty: function () {
+        this.cache = {};
     }
 };
 

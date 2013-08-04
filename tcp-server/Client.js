@@ -28,7 +28,7 @@ Client.prototype = {
 
     setData: function (path, value) {
         var oldValue = this.getData(path);
-        var message = new EventMessage(EventMessage.CLIENT_DATA_UPDATE);
+        var message = new EventMessage();
 
         this.cache.set(path, value);
 
@@ -45,8 +45,9 @@ Client.prototype = {
     },
 
     close: function () {
-
+        this.session.destroy();
         this.socket.close();
+        this.cache.empty();
     }
 };
 
