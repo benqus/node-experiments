@@ -22,6 +22,10 @@ Client.prototype = {
         return this;
     },
 
+    getLastMessage: function () {
+        return this.lastMessage;
+    },
+
     getData: function (path) {
         return this.cache.get(path);
     },
