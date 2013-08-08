@@ -31,6 +31,7 @@ process.on('message', function (data) {
     fs.exists(path, function (exists) {
 
         //read file if exists
+        //favicon.ico requests will fail
         if (exists) {
             readFile(path, data.uid);
         } else {

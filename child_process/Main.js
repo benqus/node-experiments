@@ -51,7 +51,7 @@ var server = function (req, res) {
     //send file name to read
     FileProcess
         .send({
-            "file": process.argv[2] || "test.json",
+            "file": (req.url.replace(/^\//, "")) || "test.json",
             "uid": uid
         });
 
